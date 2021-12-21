@@ -30,7 +30,7 @@ body {
     padding: 20px 0;
     border: 2px solid silver;
     cursor: pointer;
-    display: none;
+    /*display: none;*/
     
 }
 
@@ -45,7 +45,6 @@ body {
     padding: 20px;
     background: darkred;
     border-radius: 20px 20px;
-    
     color: silver;
     display: none;
 }
@@ -91,7 +90,7 @@ body {
 }
 
 #trivia {
-    display: block;
+    /*display: block;*/
     height: 480px;
     position: relative;
 }
@@ -118,10 +117,8 @@ body {
 
 #trivia #trivia_head #clock {
     height: 50px;
-    
     background: darkred;
     color: silver;
-    
     font-size: 18px;
     border-radius: 10px 10px; 
     display: flex;
@@ -143,8 +140,6 @@ body {
     width: 50px;
     background: darkred;
     color: silver;
-    
-    
     margin: 2px 0 0 27px;
 }
 
@@ -165,14 +160,14 @@ body {
     margin: 0 10px 0 5px;
 }
 
-#trivia #selectionlist {
+#trivia #selectionList {
     height: 400px;
     width: 100%;
     position: absolute;
     top: 200px;
 }
 
-#trivia #selectionlist h4 {
+#trivia #selectionList h4 {
     height: 50px;
     width: 535px;
     background: darkred;
@@ -187,15 +182,110 @@ body {
     cursor: pointer;
 }
 
-#trivia #selectionlist h4:hover {
+#trivia #selectionList h4:hover {
     background: silver;
     color:darkred
 }
 
-#trivia #selectionlist .active {
+#trivia #selectionList .active {
     background:silver;
 }
 
-#trivia #selectionlist .disabled {
+#trivia #selectionList .disabled {
     pointer-events: none;
+}
+
+
+
+#trivia #answers {
+    height: 60px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    
+}
+
+#trivia #answers h3 {
+    margin: 0px 30px;
+    display: none;
+}
+
+#trivia #answers h3:last-child {
+    height: 40px;
+    width: 100px;
+    display: grid;
+    place-items: center;
+    background: darkred;
+    position: absolute;
+    right: 0;
+    color: silver;
+    border: 1 px solid silver;
+    font-size: 18px;
+    border-radius: 10px 10px;
+    cursor: pointer;
+    margin: 0 20px;
+}
+
+#trivia #answers h3:hover {
+    background: silver;
+}
+
+#trivia #answers h3:first-child:hover {
+    background: none;
+}
+
+
+
+#container #results {
+    height: 500px;
+    width: 450px;
+    padding: 20px;
+    background: darkred;
+    border-radius: 30px 10px;
+    border: 1px solid black;
+    overflow: hidden;
+    position: relative;
+    display: none;
+}
+
+#container #results h6 {
+    height: 40px;
+    width: 87%;
+    font-size: 25px;
+    position: absolute;
+    text-align: center;
+    top: 235px;
+}
+
+#container #results #points {
+    font-size: 30px;
+    top: 275px;
+}
+
+#container #results button {
+    height: 60px;
+    width: 260px;
+    border: none;
+    outline: none;
+    background: silver;
+    color: darkred;
+    position: absolute;
+    left: 125px;
+    top: 335px;
+    border: 1px solid black;
+    border-radius: 10px 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#container #results button:last-child {
+    top: 406px;
+}
+
+#container #results button:hover {
+    background: darkred;
+    color:silver;
 }

@@ -10,7 +10,6 @@
 
 <body>
     
-
     <div id="container">
         <!--Start-->
         <div id="start">Start</div>
@@ -25,10 +24,9 @@
             <button id="exit">Exit</button>
             <button id="continue">Continue</button>
         </div>
-    
     </div>
 
-    <!--Trivia Section-->
+    <!--Trivia sec-->
     <div id="trivia">
         <div id="trivia_head">
             <h5>~Coding TrIvIa~</h5>
@@ -39,36 +37,37 @@
         </div>
     
     <!--Questions-->
-    <div id="questions">
-        <h2 id="questnum">1. </h2>
-        <h2 id="questtext">What word best refers to the rules that define the structure of a programming language?</h2>
-    </div>
+        <div id="questions">
+            <h2 id="questNum"></h2>
+            <h2 id="questText"></h2>
+        </div>
+
     <!--Choices-->
-    <div id="selectionlist">
-        <h4 class="options" id="option1">Synchronize</h4>
-        <h4 class="options" id="option2">Syntax</h4>
-        <h4 class="options" id="option3">Structure</h4>
-        <h4 class="options" id="option4">Solve</h4>
+    <div id="selectionList">
+        <h4 class="options" id="option1"></h4>
+        <h4 class="options" id="option2"></h4>
+        <h4 class="options" id="option3"></h4>
+        <h4 class="options" id="option4"></h4>
     </div>
 
     <!--answers-->
     <div id="answers">
-        <h3 id="answerque"
-        
-    
-    
-
-</div>
-
+        <h3 id="correctTotal">2 of 5 questions</h3>
+        <h3 id="next">Next</h3>
     </div>
+      </div>
 
+        <!--results-->
+    <div id="results">
+        <h6>Finished!~</h6>
+        <h6 id="points">You got 3 out of 5</h6>
+        <button id="quit">Quit</button>
+        <button id="again">Go Again</button>
+    </div>
+      </div>
 
-
-
-
-
-
-
-    <script src="script.js"></script> 
+      <script type="text/javascript" src="./assets/questionList.js"></script>
+      <script type="text/javascript" src="./assets/script.js"></script>
+      
 </body>
 </html>
