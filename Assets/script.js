@@ -25,7 +25,7 @@ let option4 = document.querySelector("#option4");
 let correctTotal = document.querySelector("#correctTotal");
 let next = document.querySelector("#next");
 
-//result
+//results
 let results = document.querySelector("#results");
 let points = document.querySelector("#points");
 let quit = document.querySelector("#quit");
@@ -39,19 +39,21 @@ let interval = 0;
 
 let correct = 0;
 
-
 let userAns = undefined;
 
+//start button 
 start.addEventListener("click" , ()=>{
     start.style.display = "none";
     rules.style.display = "block";
 });
 
+//exit button
 exit.addEventListener("click" , ()=>{
     start.style.display = "block";
     rules.style.display = "none";
 });
 
+//timer setup
 let countDown = ()=>{
     if(clock === 15)
     {
@@ -65,7 +67,6 @@ let countDown = ()=>{
         }
 }
 
-
 let loadData = ()=>{
     questNum.innerText = index + 1 + ". ";
     questText.innerText = list[index].question;
@@ -74,15 +75,13 @@ let loadData = ()=>{
     option3.innerText = list[index].choice3;
     option4.innerText = list[index].choice4;
 
-    
+    //timer start
     clock = 0; 
 }
 
 loadData();
 
-
-
-
+//continue button
 continueBtn.addEventListener("click", () => {
     trivia.style.display = "block";
     rules.style.display = "none";
@@ -102,7 +101,7 @@ options.forEach(removeActive =>{
 options.forEach( (choices,choiceNum) =>{
     choices.addEventListener("click" , ()=>{
         choices.classList.add("active");
-        
+        //answer check
         if(choiceNum === list[index].answer)
         {
             correct++;
@@ -111,7 +110,7 @@ options.forEach( (choices,choiceNum) =>{
             {
                 correct += 0;
             }
-            
+            //timer stop
             clearInterval(interval)
 
             for(i = 0; i <= 3; i++)
@@ -120,7 +119,7 @@ options.forEach( (choices,choiceNum) =>{
                 }
     })
 }); 
-
+//next button
 next.addEventListener("click" , ()=>{
 
     if(index !== list.length - 1)
@@ -129,9 +128,10 @@ next.addEventListener("click" , ()=>{
             options.forEach(removeActive =>{
                 removeActive.classList.remove("active");
             })
-
+            //question
             loadData();
-
+            
+            //result
             correctTotal.style.display = "block";
             correctTotal.innerHTML = `${correct} Out of ${list.length} Questions`;
             clearInterval(interval);
@@ -152,11 +152,13 @@ next.addEventListener("click" , ()=>{
         }
     })
 
+  //quit button
     quit.addEventListener("click", () => {
         start.style.display = "block";
         results.style.display = "none";
     });
 
+//play again button
     again.addEventListener("click", () => {
         rules.style.display = "block";
         results.style.display = "none";
