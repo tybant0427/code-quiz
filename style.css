@@ -136,6 +136,8 @@ body {
     color: silver;
 }
 
+/*questions*/
+
 #trivia #questions {
     position: absolute;
     top: 90px;
