@@ -89,13 +89,14 @@ continueBtn.addEventListener("click", () => {
 
     interval = setInterval(countDown, 1000);
     loadData();
-});
 
-options.forEach(removeActive => {
+
+options.forEach(removeActive =>{
     removeActive.classList.remove("active");
-    })
-
+})    
     correctTotal.innerHTML = `${correct = 0} Out of ${list.length} Questions`;
+
+});
 
 
 options.forEach( (choices,choiceNum) =>{
@@ -112,5 +113,52 @@ options.forEach( (choices,choiceNum) =>{
             }
             
             clearInterval(interval)
+
+            for(i = 0; i <= 3; i++)
+                {
+                    options[i].classList.add("disabled");
+                }
     })
 }); 
+
+next.addEventListener("click" , ()=>{
+
+    if(index !== list.length - 1)
+        {
+            index++;
+            options.forEach(removeActive =>{
+                removeActive.classList.remove("active");
+            })
+
+            loadData();
+
+            correctTotal.style.display = "block";
+            correctTotal.innerHTML = `${correct} Out of ${list.length} Questions`;
+            clearInterval(interval);
+            interval = setInterval(countDown , 1000);
+        }
+        else 
+        {
+            index = 0;
+
+
+            clearInterval(interval);
+            trivia.style.display = "none";
+            points.innerHTML = `You got ${correct} out of ${list.length}`;
+            results.style.display = "block";
+        }
+        for (i = 0; i <= 3; i++) {
+            options[i].classList.remove("disabled");
+        }
+    })
+
+    quit.addEventListener("click", () => {
+        start.style.display = "block";
+        results.style.display = "none";
+    });
+
+    again.addEventListener("click", () => {
+        rules.style.display = "block";
+        results.style.display = "none";
+    });
+
